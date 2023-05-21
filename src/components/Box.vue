@@ -3,7 +3,7 @@
 </template>
 <script>
 export default{
-	props:["left","top","width","height","text","center","textColor","backgroundColor","fontSize","borderSize","borderRadius","borderColor"],
+	props:["left","top","width","height","text","center","textColor","backgroundColor","fontSize","borderSize","borderRadius","borderColor","highlight"],
 	computed:{
 		css(){
 			return{
@@ -18,6 +18,7 @@ export default{
 				"--borderSize":this.borderSize,
 				"--borderRadius":this.borderRadius,
 				"--borderColor":this.borderColor,
+				"--highlight":this.highlight=="yes"?"0 0 0 7px rgba(4, 170, 109, .2)":"none",
 			}
 		}
 	},
@@ -43,5 +44,7 @@ div{
 	border-radius:var(--borderRadius);
 	cursor:pointer;
 	user-select: none;
+	box-shadow:var(--highlight);
+	
 }
 </style>
